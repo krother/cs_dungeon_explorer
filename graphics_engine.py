@@ -5,9 +5,6 @@ Code on github.com/krother/cs_dungeon_explorer
 """
 import numpy as np
 import cv2
-import random
-from pydantic import BaseModel
-from typing import Any
 
 
 LEVEL_SIZE_X, LEVEL_SIZE_Y = 10, 10
@@ -17,20 +14,6 @@ SCREEN_SIZE_X, SCREEN_SIZE_Y = LEVEL_SIZE_X * TILE_SIZE, LEVEL_SIZE_Y * TILE_SIZ
 X_BOUNDARY = SCREEN_SIZE_X - TILE_SIZE
 Y_BOUNDARY = SCREEN_SIZE_Y - TILE_SIZE
 
-
-# define the data model
-class Position(BaseModel):
-    x: int
-    y: int
-
-
-class Player(BaseModel):
-    image: Any  # TODO: look up how to use np.ndarray
-    position: Position
-
-
-class Level(BaseModel):
-    structure: list[list[bool]]  # <-- requires Py 3.10 or 3.9
 
 
 def double_size(img):
