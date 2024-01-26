@@ -76,7 +76,7 @@ class DungeonExplorer(BaseModel):
         if not self.level.structure[new_position.y][new_position.x]:
             self.player.position = new_position
 
-
+random.seed(42)
 dungeon = DungeonExplorer(
     player = Player(
         position = Position(x=4, y=4)
